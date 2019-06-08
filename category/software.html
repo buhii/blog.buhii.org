@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:300' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8" />
+    <title>pikku pukki | articles in the "software" category</title>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/theme/css/screen.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/print.css" type="text/css" media="print" />
+    <meta name="generator" content="Pelican" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+
+                <li class="ephemeral selected"><a href="/category/software.html">software</a></li>
+                <li><a href="/categories">Categories</a></li>
+                <li><a href="/archives">Archives</a></li>
+            </ul>
+        </nav>
+        <div class="header_box">
+            <h1><a href="/">pikku pukki</a></h1>
+        </div>
+    </header>
+    <div id="wrapper">
+        <div id="content">            <h4 class="date">2015-11-23</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="/messnamed.html" rel="bookmark" title="Permanent Link to &quot;messnamed&quot;">messnamed</a>
+                </h2>
+
+                <p>Max6 では（環境の制約で Max7 が使えないのだ）ヘビーに js object を使っているのだけど、最近まで <a href="https://docs.cycling74.com/max5/vignettes/js/jsglobal.html">messnamed</a> という関数を知らなかった。今までは以下のように js object の outlet からパッチコードを引いて使っていた。</p>
+<div class="highlight"><pre><span></span><span class="nx">outlet</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]);</span>
+</pre></div>
+
+
+<p>しかしこの方法だと他にもいろいろなところに情報を送ろうとするたびに js object の outlet を増やさないとならず outlet の管理やパッチコードのメンテナンスが大変になる。</p>
+<p><img alt="messnamed1" src="/images/messnamed1.png"></p>
+<p>ひとつの方法としては、js object の下に route object を配置してそこで分岐させる方法が考えられる。</p>
+<p><img alt="messnamed2" src="/images/messnamed2.png"></p>
+<p>どの outlet がどこに対応しているかを js object で管理する必要がなくなるので多少マシになる。しかしパッチコードの複雑さは解決していない。そこで messnamed の出番だ。</p>
+<div class="highlight"><pre><span></span><span class="nx">messnamed</span><span class="p">(</span><span class="s2">&quot;target1&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]);</span>
+<span class="nx">messnamed</span><span class="p">(</span><span class="s2">&quot;target2&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;hoge&quot;</span><span class="p">,</span> <span class="s2">&quot;fuga&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">]);</span>
+<span class="nx">messnamed</span><span class="p">(</span><span class="s2">&quot;target3&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="s2">&quot;bazz&quot;</span><span class="p">]);</span>
+<span class="p">...</span>
+</pre></div>
+
+
+<p>と書いておき、 <code>r targetObject</code> と receive object を作っておけばパッチコードを繋げることなく直接 js から情報を送ることができる。</p>
+<p><img alt="messnamed3" src="/images/messnamed3.png"></p>
+<p>さてこれで問題は解決した。欠点としては receive object がどこから接続されているかという情報が欠落してしまうことだ。receive object をダブルクリックすればどこから send されているか分かるが js 内からの情報はさすがにトレースされない。</p>
+<p><img alt="messnamed4" src="/images/messnamed4.png"></p>
+<p>どの情報をパッチコード経由で送るか、js 内部に隠蔽して送るかはちょっと考える必要がある。パッチコードで送りづらいものは js 内部で送ればいいと思うけど、Max ユーザの人たちはどのように使い分けているのだろう？</p>
+                <div class="clear"></div>
+
+                <div class="info">
+
+                    <a href="/category/software.html" rel="tag" class="category">software</a>
+                    &nbsp;
+                    &nbsp;<a href="/tag/max.html" class="tags">Max</a>
+                </div>
+            </article>            <h4 class="date">2015-11-07</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="/juce.html" rel="bookmark" title="Permanent Link to &quot;JUCE&quot;">JUCE</a>
+                </h2>
+
+                <p>HN で <a href="https://news.ycombinator.com/item?id=10512248">Juce C++ framework reaches v4 with live-coding environment</a> という thread が上がっていた。JUCE はそういえば Max で使われているんだっけと思って調べてみると <a href="http://www.juce.com/case-studies/max">Building Max with JUCE</a> という記事があった。この記事によると、もともと Max/MSP は Mac OS 用のソフトウェアだったが、Windows 環境にポートするにあたって Mac2Win という Windows 上で Mac 環境をエミュレーションするソフトウェアを使ったらしい。ただライセンスが高額なのとエミュレーション環境が pre-Mac OS X だったのがきっかけで他の cross-platform framework を探していたところ JUCE を見つけたそうだ。会社ではこのような GUI アプリケーションを書くときは Qt が人気なのだけど、HN でも評判は良さそうだし、C++ の weirdness なところを隠蔽した良い設計という感想もあったので、必要になったときは思い出してみようと思う。</p>
+                <div class="clear"></div>
+
+                <div class="info">
+
+                    <a href="/category/software.html" rel="tag" class="category">software</a>
+                    &nbsp;
+                    &nbsp;<a href="/tag/juce.html" class="tags">JUCE</a>
+                    &nbsp;<a href="/tag/max.html" class="tags">Max</a>
+                </div>
+            </article>            <h4 class="date">2015-11-03</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="/mountain-car.html" rel="bookmark" title="Permanent Link to &quot;Mountain Car&quot;">Mountain Car</a>
+                </h2>
+
+                <p>強化学習について以前から調査している。<a href="http://buhii.github.com/mountaincar.js/index.html">Mountain Car</a> という testbed を書いてみた。 neural net (<a href="http://cs.stanford.edu/people/karpathy/convnetjs/">ConvNetJS</a>) + Q-learning でしばらく実装していたが、どうもうまくいかない。よく調べたら <a href="https://webdocs.cs.ualberta.ca/~sutton/RL-FAQ.html#backpropagation">"I am doing RL with a backpropagation neural network and it doesn't work; what should I do?"</a>という FAQ があるではないか。結局 CMAC (tile coding) を使ってようやく動くようになった。難しい。DQN でうまく動作させるにはどういうコツが必要なのだろう？ hidden layers の設定や学習率等のパラメータを適切に指定すれば動くのかもしれないが、いまのところうまくいっていない。</p>
+<p>最終的に Cycling74 の Max 上で動作させる予定である。<a href="https://github.com/grrrwaaa/maxcpp">maxcpp</a> というので Max external object を C++ で記述することができて良い。でも <s>同じ人が書いた</s> <a href="http://grrrr.org/research/software/flext/">flext</a> で Max と PureData どちらも対応したライブラリが生成できるので、より便利かも。調べてみると <a href="https://ccrma.stanford.edu/~larrywu/course/220a/final/final-proj.html">このプロジェクト (220A Final Project) </a>などで使われているようだ。</p>
+<p><em>[2015-11-05 追記]</em> <a href="https://github.com/grrrwaaa/maxcpp">maxcpp</a> と <a href="http://grrrr.org/research/software/flext/">flext</a> は違う人が書いたものだった。似たようなアカウント名だったのでうっかり間違えてしまった。</p>
+<p><em>[2015-11-07 追記]</em> <a href="http://mlg.eng.cam.ac.uk/pilco/">PILCO</a> というのを見つけた。</p>
+                <div class="clear"></div>
+
+                <div class="info">
+
+                    <a href="/category/software.html" rel="tag" class="category">software</a>
+                    &nbsp;
+                    &nbsp;<a href="/tag/reinforcement-learning.html" class="tags">Reinforcement Learning</a>
+                    &nbsp;<a href="/tag/max.html" class="tags">Max</a>
+                </div>
+            </article>
+
+                <div class="clear"></div>
+                <div class="pages">
+
+                    <a href="/category/software2.html" class="next_page">Next&nbsp;&rarr;</a>
+                    <span>Page 1 of 3</span>
+                </div>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+</body>
+</html>

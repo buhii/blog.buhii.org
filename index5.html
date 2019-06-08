@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:300' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8" />
+    <title>pikku pukki</title>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/theme/css/screen.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/print.css" type="text/css" media="print" />
+    <meta name="generator" content="Pelican" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/categories">Categories</a></li>
+                <li><a href="/archives">Archives</a></li>
+            </ul>
+        </nav>
+        <div class="header_box">
+            <h1><a href="/">pikku pukki</a></h1>
+        </div>
+    </header>
+    <div id="wrapper">
+        <div id="content">            <h4 class="date">2015-11-07</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="/juce.html" rel="bookmark" title="Permanent Link to &quot;JUCE&quot;">JUCE</a>
+                </h2>
+
+                <p>HN で <a href="https://news.ycombinator.com/item?id=10512248">Juce C++ framework reaches v4 with live-coding environment</a> という thread が上がっていた。JUCE はそういえば Max で使われているんだっけと思って調べてみると <a href="http://www.juce.com/case-studies/max">Building Max with JUCE</a> という記事があった。この記事によると、もともと Max/MSP は Mac OS 用のソフトウェアだったが、Windows 環境にポートするにあたって Mac2Win という Windows 上で Mac 環境をエミュレーションするソフトウェアを使ったらしい。ただライセンスが高額なのとエミュレーション環境が pre-Mac OS X だったのがきっかけで他の cross-platform framework を探していたところ JUCE を見つけたそうだ。会社ではこのような GUI アプリケーションを書くときは Qt が人気なのだけど、HN でも評判は良さそうだし、C++ の weirdness なところを隠蔽した良い設計という感想もあったので、必要になったときは思い出してみようと思う。</p>
+                <div class="clear"></div>
+
+                <div class="info">
+
+                    <a href="/category/software.html" rel="tag" class="category">software</a>
+                    &nbsp;
+                    &nbsp;<a href="/tag/juce.html" class="tags">JUCE</a>
+                    &nbsp;<a href="/tag/max.html" class="tags">Max</a>
+                </div>
+            </article>            <h4 class="date">2015-11-03</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="/mountain-car.html" rel="bookmark" title="Permanent Link to &quot;Mountain Car&quot;">Mountain Car</a>
+                </h2>
+
+                <p>強化学習について以前から調査している。<a href="http://buhii.github.com/mountaincar.js/index.html">Mountain Car</a> という testbed を書いてみた。 neural net (<a href="http://cs.stanford.edu/people/karpathy/convnetjs/">ConvNetJS</a>) + Q-learning でしばらく実装していたが、どうもうまくいかない。よく調べたら <a href="https://webdocs.cs.ualberta.ca/~sutton/RL-FAQ.html#backpropagation">"I am doing RL with a backpropagation neural network and it doesn't work; what should I do?"</a>という FAQ があるではないか。結局 CMAC (tile coding) を使ってようやく動くようになった。難しい。DQN でうまく動作させるにはどういうコツが必要なのだろう？ hidden layers の設定や学習率等のパラメータを適切に指定すれば動くのかもしれないが、いまのところうまくいっていない。</p>
+<p>最終的に Cycling74 の Max 上で動作させる予定である。<a href="https://github.com/grrrwaaa/maxcpp">maxcpp</a> というので Max external object を C++ で記述することができて良い。でも <s>同じ人が書いた</s> <a href="http://grrrr.org/research/software/flext/">flext</a> で Max と PureData どちらも対応したライブラリが生成できるので、より便利かも。調べてみると <a href="https://ccrma.stanford.edu/~larrywu/course/220a/final/final-proj.html">このプロジェクト (220A Final Project) </a>などで使われているようだ。</p>
+<p><em>[2015-11-05 追記]</em> <a href="https://github.com/grrrwaaa/maxcpp">maxcpp</a> と <a href="http://grrrr.org/research/software/flext/">flext</a> は違う人が書いたものだった。似たようなアカウント名だったのでうっかり間違えてしまった。</p>
+<p><em>[2015-11-07 追記]</em> <a href="http://mlg.eng.cam.ac.uk/pilco/">PILCO</a> というのを見つけた。</p>
+                <div class="clear"></div>
+
+                <div class="info">
+
+                    <a href="/category/software.html" rel="tag" class="category">software</a>
+                    &nbsp;
+                    &nbsp;<a href="/tag/reinforcement-learning.html" class="tags">Reinforcement Learning</a>
+                    &nbsp;<a href="/tag/max.html" class="tags">Max</a>
+                </div>
+            </article>            <h4 class="date">2015-10-13</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="/shou-he-zhao.html" rel="bookmark" title="Permanent Link to &quot;手賀沼&quot;">手賀沼</a>
+                </h2>
+
+                <p>10月10-12日の三連休は柏・手賀沼あたりを友人と散策した。</p>
+<p><a href="https://www.facebook.com/cluster.beer">Cluster</a> というクラフトビールのお店に行った。Cluster ではいろいろなクラフトビールを楽しむことができる。リュトン・グラスが印象的な Gargery という国産のビールが今回の目当てでとてもおいしかったが、友人が最初に頼んだ St.Erhard というドイツのビールがさらに好みだった。</p>
+<p><a href="https://www.pref.chiba.lg.jp/kouen/toshikouen/guidemap/teganuma.html">手賀沼自然ふれあい緑道(千葉県ホームページ)</a>はお気に入りの散歩スポットである。道の近くには <a href="http://www.streamvalley.jp/">Stream Valley</a> というコーヒー店があり気になっていた。今回、実際に行ってみたが美味しいコーヒーをいただくことができた。コーヒー教室にもぜひ行ってみたい。</p>
+<p>緑道は全長 9.4km あり途中<a href="http://www.manntenn.com/">満天の湯</a>という温泉がある。1,800m 掘削して温泉を掘り当てたらしい。エントランスには掘削した際の土が掘削距離ごとに展示されていた。また男湯の体重計の前に温泉掘削ビットが展示されていた。泉質は塩化物泉。まったくの素人だが、このあたりで塩化物泉が湧くのは南関東ガス田とか化石海水が関係してたりするのだろうか。千葉県はガス田があったりヨウ素が大量に採掘されていたり興味深い地質が広がっている。肝心の温泉はいろいろな種類のお風呂があってとても楽しめた。</p>
+                <div class="clear"></div>
+
+                <div class="info">
+
+                </div>
+            </article>
+
+                <div class="clear"></div>
+                <div class="pages">
+
+                    <a href="/index4.html" class="prev_page">&larr;&nbsp;Previous</a>
+                    <a href="/index6.html" class="next_page">Next&nbsp;&rarr;</a>
+                    <span>Page 5 of 8</span>
+                </div>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+</body>
+</html>

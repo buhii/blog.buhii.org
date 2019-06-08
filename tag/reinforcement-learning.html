@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:300' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8" />
+    <title>pikku pukki | articles tagged "Reinforcement Learning"</title>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/theme/css/screen.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/print.css" type="text/css" media="print" />
+    <meta name="generator" content="Pelican" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="ephemeral selected"><a href="/tag/reinforcement-learning.html">Reinforcement Learning</a></li>
+                <li><a href="/categories">Categories</a></li>
+                <li><a href="/archives">Archives</a></li>
+            </ul>
+        </nav>
+        <div class="header_box">
+            <h1><a href="/">pikku pukki</a></h1>
+        </div>
+    </header>
+    <div id="wrapper">
+        <div id="content">            <h4 class="date">2015-11-03</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="/mountain-car.html" rel="bookmark" title="Permanent Link to &quot;Mountain Car&quot;">Mountain Car</a>
+                </h2>
+
+                <p>強化学習について以前から調査している。<a href="http://buhii.github.com/mountaincar.js/index.html">Mountain Car</a> という testbed を書いてみた。 neural net (<a href="http://cs.stanford.edu/people/karpathy/convnetjs/">ConvNetJS</a>) + Q-learning でしばらく実装していたが、どうもうまくいかない。よく調べたら <a href="https://webdocs.cs.ualberta.ca/~sutton/RL-FAQ.html#backpropagation">"I am doing RL with a backpropagation neural network and it doesn't work; what should I do?"</a>という FAQ があるではないか。結局 CMAC (tile coding) を使ってようやく動くようになった。難しい。DQN でうまく動作させるにはどういうコツが必要なのだろう？ hidden layers の設定や学習率等のパラメータを適切に指定すれば動くのかもしれないが、いまのところうまくいっていない。</p>
+<p>最終的に Cycling74 の Max 上で動作させる予定である。<a href="https://github.com/grrrwaaa/maxcpp">maxcpp</a> というので Max external object を C++ で記述することができて良い。でも <s>同じ人が書いた</s> <a href="http://grrrr.org/research/software/flext/">flext</a> で Max と PureData どちらも対応したライブラリが生成できるので、より便利かも。調べてみると <a href="https://ccrma.stanford.edu/~larrywu/course/220a/final/final-proj.html">このプロジェクト (220A Final Project) </a>などで使われているようだ。</p>
+<p><em>[2015-11-05 追記]</em> <a href="https://github.com/grrrwaaa/maxcpp">maxcpp</a> と <a href="http://grrrr.org/research/software/flext/">flext</a> は違う人が書いたものだった。似たようなアカウント名だったのでうっかり間違えてしまった。</p>
+<p><em>[2015-11-07 追記]</em> <a href="http://mlg.eng.cam.ac.uk/pilco/">PILCO</a> というのを見つけた。</p>
+                <div class="clear"></div>
+
+                <div class="info">
+
+                    <a href="/category/software.html" rel="tag" class="category">software</a>
+                    &nbsp;
+                    &nbsp;<a href="/tag/reinforcement-learning.html" class="tags selected">Reinforcement Learning</a>
+                    &nbsp;<a href="/tag/max.html" class="tags">Max</a>
+                </div>
+            </article>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+</body>
+</html>
