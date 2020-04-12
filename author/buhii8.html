@@ -27,7 +27,25 @@
         </div>
     </header>
     <div id="wrapper">
-        <div id="content">            <h4 class="date">2015-09-26</h4>
+        <div id="content">            <h4 class="date">2015-09-27</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="/bookshelf-planner-2.html" rel="bookmark" title="Permanent Link to &quot;bookshelf planner 2&quot;">bookshelf planner 2</a>
+                </h2>
+
+                <p><a href="/bookshelf-planner.html">前回書いた</a>問題について少し調べた。どうやら <a href="https://en.wikipedia.org/wiki/Cutting_stock_problem">Cutting stock problem</a> と呼ばれる最適化問題のようだ。紙や木材、板金等から必要な部品をなるべく無駄がないようにカットするという問題で、応用範囲も広く問題のバリエーションも複数あるようだ。</p>
+<p>解こうとしている問題は論文 (<a href="https://www.fernuni-hagen.de/wirtschaftswissenschaft/download/beitraege/db425.pdf">A Genetic Algorithm for the Two-Dimensional Knapsack Problem with Rectangular Pieces</a>) をざっくり読んだ感じだと 2D の guillotine cutting constraint （ギロチンカット制約）付きに近いようだ。ギロチンカットというのは名前の通り板の端から端まで切ってしまう（途中で止めたりしない）もので、近所の東急ハンズの木材加工もこのやり方だったと思う。部品の orientation を気にするかどうかという制約（たぶん木材の繊維方向とか素材の異方性を考慮する場合）もあるようだけど、今回は気にしなくて良いと思う。ただ、カットする際に板が少し削られてしまうという制約はまだ見つけられていないし、さらに東急ハンズで売っている合板 (container) は数種類あるので、これはなんとかする必要がある。</p>
+<p>問題自体は焼きなまし法とか遺伝的アルゴリズム、タブーサーチ等いろいろな方法で解かれているようだ。今回は別に厳密解にこだわっていないので、実時間でまあまあな解が出せればよい。<a href="http://qiita.com/Tsutomu-KKE@github/items/0ac9bd564ae9f91285d7">この記事</a>ではギロチンカットによる二次元パッキング問題を <a href="https://pypi.python.org/pypi/ortoolpy/0.0.17">ortoolpy</a> というライブラリで解く方法が紹介されている。あと <a href="https://pythonhosted.org/PuLP/">PuLP</a> という最適化ライブラリも調べる価値がありそうだ。</p>
+                <div class="clear"></div>
+
+                <div class="info">
+
+                    <a href="/category/software.html" rel="tag" class="category">software</a>
+                    &nbsp;
+                    &nbsp;<a href="/tag/bookshelf-planner.html" class="tags">bookshelf planner</a>
+                </div>
+            </article>            <h4 class="date">2015-09-26</h4>
 
             <article class="post">
                 <h2 class="title">
@@ -70,24 +88,6 @@
                     &nbsp;<a href="/tag/idea.html" class="tags">idea</a>
                     &nbsp;<a href="/tag/bookshelf-planner.html" class="tags">bookshelf planner</a>
                     &nbsp;<a href="/tag/diy.html" class="tags">DIY</a>
-                </div>
-            </article>            <h4 class="date">2015-09-23</h4>
-
-            <article class="post">
-                <h2 class="title">
-                    <a href="/moa-museum-of-art.html" rel="bookmark" title="Permanent Link to &quot;MOA Museum of Art&quot;">MOA Museum of Art</a>
-                </h2>
-
-                <p>熱海のMOA美術館に先日行ってきた。熱海駅から美術館入口までバスで約10分。会場にはそこから7機のエスカレータを登ってようやくたどり着くことができる。美術館からは熱海の景色を一望することができる。常設展には国宝を含む日本や古代中国などの作品が展示されている。</p>
-<p><a href="http://www.moaart.or.jp/exhibition/0904/">平松礼二・森口邦彦展</a>が開催されていた。森口邦彦の作品がとくに面白かった。森口邦彦は友禅染めの重要無形文化財保持者（人間国宝）であり、街で時々見かける三越のショッピングバッグも手がけたそうだ。それまで極彩色の花が散りばめられたような着物しか知らなかったので、オプ・アートを思わせる幾何学模様をふんだんに取り入れた着物はとても新鮮だった。</p>
-<p>また会場では制作風景を撮影したビデオも上映されており、その中で紹介されていた蒔糊（まきのり）という技法が印象に残った。これは布の上に糊を乾燥させた小さな欠片をまいて、その上から染めることにより欠片以外の部分が染め上がるというものである。欠片のまき方を工夫することで、グラデーションなど様々な表現が可能である。</p>
-                <div class="clear"></div>
-
-                <div class="info">
-
-                    <a href="/category/art.html" rel="tag" class="category">art</a>
-                    &nbsp;
-                    &nbsp;<a href="/tag/textile.html" class="tags">textile</a>
                 </div>
             </article>
 

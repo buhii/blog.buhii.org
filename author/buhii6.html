@@ -27,7 +27,27 @@
         </div>
     </header>
     <div id="wrapper">
-        <div id="content">            <h4 class="date">2015-10-13</h4>
+        <div id="content">            <h4 class="date">2015-11-03</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="/mountain-car.html" rel="bookmark" title="Permanent Link to &quot;Mountain Car&quot;">Mountain Car</a>
+                </h2>
+
+                <p>強化学習について以前から調査している。<a href="http://buhii.github.com/mountaincar.js/index.html">Mountain Car</a> という testbed を書いてみた。 neural net (<a href="http://cs.stanford.edu/people/karpathy/convnetjs/">ConvNetJS</a>) + Q-learning でしばらく実装していたが、どうもうまくいかない。よく調べたら <a href="https://webdocs.cs.ualberta.ca/~sutton/RL-FAQ.html#backpropagation">"I am doing RL with a backpropagation neural network and it doesn't work; what should I do?"</a>という FAQ があるではないか。結局 CMAC (tile coding) を使ってようやく動くようになった。難しい。DQN でうまく動作させるにはどういうコツが必要なのだろう？ hidden layers の設定や学習率等のパラメータを適切に指定すれば動くのかもしれないが、いまのところうまくいっていない。</p>
+<p>最終的に Cycling74 の Max 上で動作させる予定である。<a href="https://github.com/grrrwaaa/maxcpp">maxcpp</a> というので Max external object を C++ で記述することができて良い。でも <s>同じ人が書いた</s> <a href="http://grrrr.org/research/software/flext/">flext</a> で Max と PureData どちらも対応したライブラリが生成できるので、より便利かも。調べてみると <a href="https://ccrma.stanford.edu/~larrywu/course/220a/final/final-proj.html">このプロジェクト (220A Final Project) </a>などで使われているようだ。</p>
+<p><em>[2015-11-05 追記]</em> <a href="https://github.com/grrrwaaa/maxcpp">maxcpp</a> と <a href="http://grrrr.org/research/software/flext/">flext</a> は違う人が書いたものだった。似たようなアカウント名だったのでうっかり間違えてしまった。</p>
+<p><em>[2015-11-07 追記]</em> <a href="http://mlg.eng.cam.ac.uk/pilco/">PILCO</a> というのを見つけた。</p>
+                <div class="clear"></div>
+
+                <div class="info">
+
+                    <a href="/category/software.html" rel="tag" class="category">software</a>
+                    &nbsp;
+                    &nbsp;<a href="/tag/reinforcement-learning.html" class="tags">Reinforcement Learning</a>
+                    &nbsp;<a href="/tag/max.html" class="tags">Max</a>
+                </div>
+            </article>            <h4 class="date">2015-10-13</h4>
 
             <article class="post">
                 <h2 class="title">
@@ -55,24 +75,6 @@
 
                 <div class="info">
 
-                </div>
-            </article>            <h4 class="date">2015-10-04</h4>
-
-            <article class="post">
-                <h2 class="title">
-                    <a href="/bookshelf-planner-4.html" rel="bookmark" title="Permanent Link to &quot;bookshelf planner 4&quot;">bookshelf planner 4</a>
-                </h2>
-
-                <p><a href="https://pypi.python.org/pypi/ortoolpy/">ortoolpy</a> を参考に１枚板のギロチンカットを解くプログラムを書いてみた（<a href="https://gist.github.com/buhii/8d7f5cb058fe9b6c97f2">packer.py</a>）。<a href="http://plotdevice.io/">PlotDevice</a> で以下の様な画像を描画する。</p>
-<p><img alt="packer_color.gif" src="/images/packer_color.gif"></p>
-<p>問題についてもう少し調べた。今回の問題は two-dimensional bin packing problem (2DBPP)、その中でも複数の種類のコンテナを扱う 2D variable-sized bin packing problem (2DVSBPP) と呼ばれているもののようだ。<a href="http://www.cis.umac.mo/~fstasp/paper/ejor2014.pdf">"A hybrid heuristic algorithm for the 2D variable-sized bin packing problem"</a> という論文を見つけた。この論文をもとに実装していけば良さそうだ。</p>
-                <div class="clear"></div>
-
-                <div class="info">
-
-                    <a href="/category/software.html" rel="tag" class="category">software</a>
-                    &nbsp;
-                    &nbsp;<a href="/tag/bookshelf-planner.html" class="tags">bookshelf planner</a>
                 </div>
             </article>
 

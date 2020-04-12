@@ -27,7 +27,25 @@
         </div>
     </header>
     <div id="wrapper">
-        <div id="content">            <h4 class="date">2015-11-23</h4>
+        <div id="content">            <h4 class="date">2015-11-24</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="/gender-symbols.html" rel="bookmark" title="Permanent Link to &quot;Gender symbols&quot;">Gender symbols</a>
+                </h2>
+
+                <p>Twitter を徘徊していたとき NY 在住の女性ソフトウェアエンジニアのプロフィールに "⚢" とあった。Unicode に10種類以上の <a href="https://en.wikipedia.org/wiki/Gender_symbol">gender symbols</a> があるというのは知らなかった。Wikipedia によると2005年から取り込まれているようだ。</p>
+<p>学生の頃、同性から好きだと告白されたことがある。彼は僕と同じ寮にいて、ときどき彼と寮のお風呂で出会うこともあった。彼とは恋人にはならなかったが、同じ体育の授業を取ったり都内に住む彼の親戚の家へ遊びにいったり、引き続き友達として付き合っていた。</p>
+<p>今年の夏にフィンランドに旅行した時、ヘルシンキから１駅ほど離れた公園で "mini-Pride" なるイベントに出くわした。案内してくれた友達のフィンランド人女性いわく、Pride というイベントがヘルシンキで開催されるついでに、この小さな公園でも小規模なイベントが開催されているのではないか、ということだった。公園内には老若男女たくさんの人たちが詰めかけていた。そこでは大音量で BGM が流れる中、シャンパンを飲みながら男性がかなり派手な女装をして公園内をマラソンしていた。公園内の人たちは男女問わず彼らを応援し、彼らのユーモラスな振る舞いに歓声を送っていた。出演者の男性達は、公園で観戦していた子供たちに対して優しく接していた。このようなイベントに子供たちを連れてくるのは意外だったが、異性愛に限らず様々な愛があるということを小さいころから知るのは良いことなのかもしれない。イベントが終わった後、自分たちの前にいた若い女性二人組が静かにキスしながら公園を後にしていたのが印象的だった。</p>
+<p>ヘルシンキ現代美術館の Kiasma に行った時もちょうど <a href="https://en.wikipedia.org/wiki/Robert_Mapplethorpe">Robert Mapplethorpe</a> や <a href="https://en.wikipedia.org/wiki/Tom_of_Finland">Tom of Finland</a> が展示されていた。Tom of Finland がフィンランドの郵便局から切手として販売されているのはさすがにびっくりだけど。その数日後ストックホルムへ旅行した時も、虹色のポスターを街角の様々なところで見かけた。</p>
+<p>案内してくれた友達から、アメリカ国籍を持っているけどフィンランドに帰化したいという男性の話を聞いた。フィンランドは2002年から同性同士の結婚 (registered partnerships) が認められており、フィンランド人の彼氏と結婚したいからというのが理由だったと思う。彼女はフィンランドでは男性に対して半年〜１年の兵役か社会奉仕が義務付けられているが、確か30歳を過ぎて帰化した場合その義務はなくなるのでそれまで待った方が良い、とアドバイスしたようだ。</p>
+<p>日本でも渋谷区のように registered partnerships は徐々に広まっていくと思うが、カミングアウトできる人はそう簡単には増えないような気がする。いずれにしろ同性同士、異性同士問わず隠さなくても好きな人と一緒になれる社会になれば良いね。</p>
+                <div class="clear"></div>
+
+                <div class="info">
+
+                </div>
+            </article>            <h4 class="date">2015-11-23</h4>
 
             <article class="post">
                 <h2 class="title">
@@ -79,26 +97,6 @@
                     <a href="/category/software.html" rel="tag" class="category">software</a>
                     &nbsp;
                     &nbsp;<a href="/tag/juce.html" class="tags">JUCE</a>
-                    &nbsp;<a href="/tag/max.html" class="tags">Max</a>
-                </div>
-            </article>            <h4 class="date">2015-11-03</h4>
-
-            <article class="post">
-                <h2 class="title">
-                    <a href="/mountain-car.html" rel="bookmark" title="Permanent Link to &quot;Mountain Car&quot;">Mountain Car</a>
-                </h2>
-
-                <p>強化学習について以前から調査している。<a href="http://buhii.github.com/mountaincar.js/index.html">Mountain Car</a> という testbed を書いてみた。 neural net (<a href="http://cs.stanford.edu/people/karpathy/convnetjs/">ConvNetJS</a>) + Q-learning でしばらく実装していたが、どうもうまくいかない。よく調べたら <a href="https://webdocs.cs.ualberta.ca/~sutton/RL-FAQ.html#backpropagation">"I am doing RL with a backpropagation neural network and it doesn't work; what should I do?"</a>という FAQ があるではないか。結局 CMAC (tile coding) を使ってようやく動くようになった。難しい。DQN でうまく動作させるにはどういうコツが必要なのだろう？ hidden layers の設定や学習率等のパラメータを適切に指定すれば動くのかもしれないが、いまのところうまくいっていない。</p>
-<p>最終的に Cycling74 の Max 上で動作させる予定である。<a href="https://github.com/grrrwaaa/maxcpp">maxcpp</a> というので Max external object を C++ で記述することができて良い。でも <s>同じ人が書いた</s> <a href="http://grrrr.org/research/software/flext/">flext</a> で Max と PureData どちらも対応したライブラリが生成できるので、より便利かも。調べてみると <a href="https://ccrma.stanford.edu/~larrywu/course/220a/final/final-proj.html">このプロジェクト (220A Final Project) </a>などで使われているようだ。</p>
-<p><em>[2015-11-05 追記]</em> <a href="https://github.com/grrrwaaa/maxcpp">maxcpp</a> と <a href="http://grrrr.org/research/software/flext/">flext</a> は違う人が書いたものだった。似たようなアカウント名だったのでうっかり間違えてしまった。</p>
-<p><em>[2015-11-07 追記]</em> <a href="http://mlg.eng.cam.ac.uk/pilco/">PILCO</a> というのを見つけた。</p>
-                <div class="clear"></div>
-
-                <div class="info">
-
-                    <a href="/category/software.html" rel="tag" class="category">software</a>
-                    &nbsp;
-                    &nbsp;<a href="/tag/reinforcement-learning.html" class="tags">Reinforcement Learning</a>
                     &nbsp;<a href="/tag/max.html" class="tags">Max</a>
                 </div>
             </article>
