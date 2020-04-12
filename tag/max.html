@@ -34,8 +34,8 @@
                 </h2>
 
                 <p>Max6 では（環境の制約で Max7 が使えないのだ）ヘビーに js object を使っているのだけど、最近まで <a href="https://docs.cycling74.com/max5/vignettes/js/jsglobal.html">messnamed</a> という関数を知らなかった。今までは以下のように js object の outlet からパッチコードを引いて使っていた。</p>
-<div class="highlight"><pre><span></span><span class="nx">outlet</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]);</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="nx">outlet</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]);</span>
+</code></pre></div>
 
 
 <p>しかしこの方法だと他にもいろいろなところに情報を送ろうとするたびに js object の outlet を増やさないとならず outlet の管理やパッチコードのメンテナンスが大変になる。</p>
@@ -43,11 +43,11 @@
 <p>ひとつの方法としては、js object の下に route object を配置してそこで分岐させる方法が考えられる。</p>
 <p><img alt="messnamed2" src="/images/messnamed2.png"></p>
 <p>どの outlet がどこに対応しているかを js object で管理する必要がなくなるので多少マシになる。しかしパッチコードの複雑さは解決していない。そこで messnamed の出番だ。</p>
-<div class="highlight"><pre><span></span><span class="nx">messnamed</span><span class="p">(</span><span class="s2">&quot;target1&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]);</span>
+<div class="highlight"><pre><span></span><code><span class="nx">messnamed</span><span class="p">(</span><span class="s2">&quot;target1&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]);</span>
 <span class="nx">messnamed</span><span class="p">(</span><span class="s2">&quot;target2&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;hoge&quot;</span><span class="p">,</span> <span class="s2">&quot;fuga&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">]);</span>
 <span class="nx">messnamed</span><span class="p">(</span><span class="s2">&quot;target3&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="s2">&quot;bazz&quot;</span><span class="p">]);</span>
 <span class="p">...</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>と書いておき、 <code>r targetObject</code> と receive object を作っておけばパッチコードを繋げることなく直接 js から情報を送ることができる。</p>

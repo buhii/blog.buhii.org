@@ -29,6 +29,23 @@
 
             <article class="post">
                 <h2 class="title">
+                    <a href="/gerhard-richter-painting.html" rel="bookmark" title="Permanent Link to &quot;Gerhard Richter "Painting"&quot;">Gerhard Richter "Painting"</a>
+                </h2>
+
+                <p><a href="http://www.wako-art.jp/top.php">Gerhard Richter "Painting"</a> に行ってきた。六本木WAKO WORKS OF ARTで2015年12月19日まで。ギャラリーは思ったよりも小さく、小部屋にいくつか分かれていた。絵具の物理的な性質をうまく利用して作品を作り上げているという印象。自然に任せられるところは任せるが、全体はコントロールするという感じ。細部までしっかり作りこまれていると感じた。かなり好み。写真の上に絵具を塗りつけた作品は、面白さがあまりわからなかった。本人が写真論／絵画論を語った本が展示されていたので、そのうち読んでみたい。会社の人からドイツのドレスデンにゲルハルト・リヒターの作品をたくさん展示している美術館があってすごく良かったと教えていただいたので、ドイツに行くときは観に行こう。</p>
+<p>ゲルハルト・リヒターの作品でぜひ一度観てみたいのは、<a href="https://en.wikipedia.org/wiki/Gerhard_Richter#Cologne_Cathedral">ケルン大聖堂 (Cologne Cathedral) のステンドグラス作品</a> だ。コンピュータによって計算されたランダムに配置された72色のステンドグラスが並べられているらしい。中学生の頃 Visual Basic 6 で今風で言う algorithmic design? なスクリーンセーバを作ったとき、random を使ってピクセルの色と位置を決定しているにも関わらず対称的な図が得られてびっくりしたことがある。今思えばヘボい擬似乱数を使っていたからそうなったのだと思うけど、それはそれで美的価値があるのかもしれない。最近 HN で話題になってた V8 JavaScript engine の擬似乱数問題も興味深い (<a href="https://medium.com/@betable/tifu-by-using-math-random-f1c308c4fd9d">TIFU by using Math.random()</a>)。真の乱数は <a href="https://en.wikipedia.org/wiki/Hardware_random_number_generator">Hardware random number generator</a> で作るみたいだが、これは radiation source を使ったりするらしい。でもどうやって uniform な乱数に変換しているんだろう？下手に作ったらバイアスが入ったりしそうで怖い。設計方針とかあればぜひ読んでみたい。</p>
+                <div class="clear"></div>
+
+                <div class="info">
+
+                    <a href="/category/art.html" rel="tag" class="category">art</a>
+                    &nbsp;
+                    &nbsp;<a href="/tag/random.html" class="tags">random</a>
+                </div>
+            </article>            <h4 class="date">2015-12-13</h4>
+
+            <article class="post">
+                <h2 class="title">
                     <a href="/kurisumasuan-jian.html" rel="bookmark" title="Permanent Link to &quot;クリスマス案件&quot;">クリスマス案件</a>
                 </h2>
 
@@ -56,43 +73,6 @@
                 <div class="info">
 
                 </div>
-            </article>            <h4 class="date">2015-11-23</h4>
-
-            <article class="post">
-                <h2 class="title">
-                    <a href="/messnamed.html" rel="bookmark" title="Permanent Link to &quot;messnamed&quot;">messnamed</a>
-                </h2>
-
-                <p>Max6 では（環境の制約で Max7 が使えないのだ）ヘビーに js object を使っているのだけど、最近まで <a href="https://docs.cycling74.com/max5/vignettes/js/jsglobal.html">messnamed</a> という関数を知らなかった。今までは以下のように js object の outlet からパッチコードを引いて使っていた。</p>
-<div class="highlight"><pre><span></span><span class="nx">outlet</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]);</span>
-</pre></div>
-
-
-<p>しかしこの方法だと他にもいろいろなところに情報を送ろうとするたびに js object の outlet を増やさないとならず outlet の管理やパッチコードのメンテナンスが大変になる。</p>
-<p><img alt="messnamed1" src="/images/messnamed1.png"></p>
-<p>ひとつの方法としては、js object の下に route object を配置してそこで分岐させる方法が考えられる。</p>
-<p><img alt="messnamed2" src="/images/messnamed2.png"></p>
-<p>どの outlet がどこに対応しているかを js object で管理する必要がなくなるので多少マシになる。しかしパッチコードの複雑さは解決していない。そこで messnamed の出番だ。</p>
-<div class="highlight"><pre><span></span><span class="nx">messnamed</span><span class="p">(</span><span class="s2">&quot;target1&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]);</span>
-<span class="nx">messnamed</span><span class="p">(</span><span class="s2">&quot;target2&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;hoge&quot;</span><span class="p">,</span> <span class="s2">&quot;fuga&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">]);</span>
-<span class="nx">messnamed</span><span class="p">(</span><span class="s2">&quot;target3&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="s2">&quot;bazz&quot;</span><span class="p">]);</span>
-<span class="p">...</span>
-</pre></div>
-
-
-<p>と書いておき、 <code>r targetObject</code> と receive object を作っておけばパッチコードを繋げることなく直接 js から情報を送ることができる。</p>
-<p><img alt="messnamed3" src="/images/messnamed3.png"></p>
-<p>さてこれで問題は解決した。欠点としては receive object がどこから接続されているかという情報が欠落してしまうことだ。receive object をダブルクリックすればどこから send されているか分かるが js 内からの情報はさすがにトレースされない。</p>
-<p><img alt="messnamed4" src="/images/messnamed4.png"></p>
-<p>どの情報をパッチコード経由で送るか、js 内部に隠蔽して送るかはちょっと考える必要がある。パッチコードで送りづらいものは js 内部で送ればいいと思うけど、Max ユーザの人たちはどのように使い分けているのだろう？</p>
-                <div class="clear"></div>
-
-                <div class="info">
-
-                    <a href="/category/software.html" rel="tag" class="category">software</a>
-                    &nbsp;
-                    &nbsp;<a href="/tag/max.html" class="tags">Max</a>
-                </div>
             </article>
 
                 <div class="clear"></div>
@@ -100,7 +80,7 @@
 
                     <a href="/index3.html" class="prev_page">&larr;&nbsp;Previous</a>
                     <a href="/index5.html" class="next_page">Next&nbsp;&rarr;</a>
-                    <span>Page 4 of 8</span>
+                    <span>Page 4 of 9</span>
                 </div>
 
         </div>
