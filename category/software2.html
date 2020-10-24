@@ -27,7 +27,27 @@
         </div>
     </header>
     <div id="wrapper">
-        <div id="content">            <h4 class="date">2015-10-04</h4>
+        <div id="content">            <h4 class="date">2015-11-03</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="/mountain-car.html" rel="bookmark" title="Permanent Link to &quot;Mountain Car&quot;">Mountain Car</a>
+                </h2>
+
+                <p>強化学習について以前から調査している。<a href="http://buhii.github.com/mountaincar.js/index.html">Mountain Car</a> という testbed を書いてみた。 neural net (<a href="http://cs.stanford.edu/people/karpathy/convnetjs/">ConvNetJS</a>) + Q-learning でしばらく実装していたが、どうもうまくいかない。よく調べたら <a href="https://webdocs.cs.ualberta.ca/~sutton/RL-FAQ.html#backpropagation">"I am doing RL with a backpropagation neural network and it doesn't work; what should I do?"</a>という FAQ があるではないか。結局 CMAC (tile coding) を使ってようやく動くようになった。難しい。DQN でうまく動作させるにはどういうコツが必要なのだろう？ hidden layers の設定や学習率等のパラメータを適切に指定すれば動くのかもしれないが、いまのところうまくいっていない。</p>
+<p>最終的に Cycling74 の Max 上で動作させる予定である。<a href="https://github.com/grrrwaaa/maxcpp">maxcpp</a> というので Max external object を C++ で記述することができて良い。でも <s>同じ人が書いた</s> <a href="http://grrrr.org/research/software/flext/">flext</a> で Max と PureData どちらも対応したライブラリが生成できるので、より便利かも。調べてみると <a href="https://ccrma.stanford.edu/~larrywu/course/220a/final/final-proj.html">このプロジェクト (220A Final Project) </a>などで使われているようだ。</p>
+<p><em>[2015-11-05 追記]</em> <a href="https://github.com/grrrwaaa/maxcpp">maxcpp</a> と <a href="http://grrrr.org/research/software/flext/">flext</a> は違う人が書いたものだった。似たようなアカウント名だったのでうっかり間違えてしまった。</p>
+<p><em>[2015-11-07 追記]</em> <a href="http://mlg.eng.cam.ac.uk/pilco/">PILCO</a> というのを見つけた。</p>
+                <div class="clear"></div>
+
+                <div class="info">
+
+                    <a href="/category/software.html" rel="tag" class="category">software</a>
+                    &nbsp;
+                    &nbsp;<a href="/tag/reinforcement-learning.html" class="tags">Reinforcement Learning</a>
+                    &nbsp;<a href="/tag/max.html" class="tags">Max</a>
+                </div>
+            </article>            <h4 class="date">2015-10-04</h4>
 
             <article class="post">
                 <h2 class="title">
@@ -53,24 +73,6 @@
                 </h2>
 
                 <p>カットする際に板が削られてしまうのは、カットする板の大きさをその分大きく見なせば基本的には良さそう。ギロチンカットを続けて、最後に残った板がちょうど必要な板のサイズだった場合とか例外はあるけど。</p>
-                <div class="clear"></div>
-
-                <div class="info">
-
-                    <a href="/category/software.html" rel="tag" class="category">software</a>
-                    &nbsp;
-                    &nbsp;<a href="/tag/bookshelf-planner.html" class="tags">bookshelf planner</a>
-                </div>
-            </article>            <h4 class="date">2015-09-27</h4>
-
-            <article class="post">
-                <h2 class="title">
-                    <a href="/bookshelf-planner-2.html" rel="bookmark" title="Permanent Link to &quot;bookshelf planner 2&quot;">bookshelf planner 2</a>
-                </h2>
-
-                <p><a href="/bookshelf-planner.html">前回書いた</a>問題について少し調べた。どうやら <a href="https://en.wikipedia.org/wiki/Cutting_stock_problem">Cutting stock problem</a> と呼ばれる最適化問題のようだ。紙や木材、板金等から必要な部品をなるべく無駄がないようにカットするという問題で、応用範囲も広く問題のバリエーションも複数あるようだ。</p>
-<p>解こうとしている問題は論文 (<a href="https://www.fernuni-hagen.de/wirtschaftswissenschaft/download/beitraege/db425.pdf">A Genetic Algorithm for the Two-Dimensional Knapsack Problem with Rectangular Pieces</a>) をざっくり読んだ感じだと 2D の guillotine cutting constraint （ギロチンカット制約）付きに近いようだ。ギロチンカットというのは名前の通り板の端から端まで切ってしまう（途中で止めたりしない）もので、近所の東急ハンズの木材加工もこのやり方だったと思う。部品の orientation を気にするかどうかという制約（たぶん木材の繊維方向とか素材の異方性を考慮する場合）もあるようだけど、今回は気にしなくて良いと思う。ただ、カットする際に板が少し削られてしまうという制約はまだ見つけられていないし、さらに東急ハンズで売っている合板 (container) は数種類あるので、これはなんとかする必要がある。</p>
-<p>問題自体は焼きなまし法とか遺伝的アルゴリズム、タブーサーチ等いろいろな方法で解かれているようだ。今回は別に厳密解にこだわっていないので、実時間でまあまあな解が出せればよい。<a href="http://qiita.com/Tsutomu-KKE@github/items/0ac9bd564ae9f91285d7">この記事</a>ではギロチンカットによる二次元パッキング問題を <a href="https://pypi.python.org/pypi/ortoolpy/0.0.17">ortoolpy</a> というライブラリで解く方法が紹介されている。あと <a href="https://pythonhosted.org/PuLP/">PuLP</a> という最適化ライブラリも調べる価値がありそうだ。</p>
                 <div class="clear"></div>
 
                 <div class="info">
