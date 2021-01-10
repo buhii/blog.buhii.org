@@ -25,7 +25,36 @@
         </div>
     </header>
     <div id="wrapper">
-        <div id="content">            <h4 class="date">2020-10-24</h4>
+        <div id="content">            <h4 class="date">2021-01-10</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="/sat-solver.html" rel="bookmark" title="Permanent Link to &quot;SAT solver&quot;">SAT solver</a>
+                </h2>
+
+                <p>SAT/SMT solver をブラックボックス的に扱っているため、内部実装を知りたい場面が出てきた。</p>
+<p>実際に自分で実装できないか調べてみた。以下の文献が参考になった。</p>
+<ul>
+<li>Conflict Driven Clause Learning<br />
+  <a href="https://cse442-17f.github.io/Conflict-Driven-Clause-Learning/">https://cse442-17f.github.io/Conflict-Driven-Clause-Learning/</a></li>
+<li>鍋島 英知, 高速SATソルバーの原理<br />
+  <a href="http://www-erato.ist.hokudai.ac.jp/docs/seminar/nabeshima.pdf">http://www-erato.ist.hokudai.ac.jp/docs/seminar/nabeshima.pdf</a></li>
+<li>新山 祐介, 充足可能性問題について<br />
+  <a href="https://euske.github.io/slides/sem20180612/index.html">https://euske.github.io/slides/sem20180612/index.html</a></li>
+</ul>
+<p>まずは DPLL アルゴリズムのソルバーを簡単に Python で書いてみた。</p>
+<ul>
+<li><a href="https://gist.github.com/buhii/cb99b67127cea0504289788227cb13cf">https://gist.github.com/buhii/cb99b67127cea0504289788227cb13cf</a></li>
+</ul>
+<p>CDCL アルゴリズムについては first UIP を導出するアルゴリズムがそこそこ難しそうで、まだ実装できていない。
+ただ DPLL よりも高速に動作するようだ。</p>
+                <div class="clear"></div>
+
+                <div class="info">
+
+                    <a href="/category/software.html" rel="tag" class="category">software</a>
+                </div>
+            </article>            <h4 class="date">2020-10-24</h4>
 
             <article class="post">
                 <h2 class="title">
@@ -57,26 +86,13 @@
                 <div class="info">
 
                 </div>
-            </article>            <h4 class="date">2020-04-12</h4>
-
-            <article class="post">
-                <h2 class="title">
-                    <a href="/acm.html" rel="bookmark" title="Permanent Link to &quot;ACM&quot;">ACM</a>
-                </h2>
-
-                <p>ACM Digital Library に欲しい論文があったりするとき個人で契約しておらず不便だったので <code>Professional Membership plus ACM Digital Library ($198)</code> で契約していた。最近 <a href="https://learning.acm.org/e-learning/oreilly">O'Reilly Learning Platform</a> が利用可能だということに気がついて、技術書などはここで調べて読むようにしている（O'Reilly Learning Platform 自体は ACM Professional Membership ($99) で利用可能である）。出版前の WIP のものも含めて様々な書籍が英文でオンラインで公開されており読み放題なため、手元にある技術書などは（思いれのあるものを除いて）ほぼ全部売ってしまった。</p>
-                <div class="clear"></div>
-
-                <div class="info">
-
-                </div>
             </article>
 
                 <div class="clear"></div>
                 <div class="pages">
 
                     <a href="/index2.html" class="next_page">Next&nbsp;&rarr;</a>
-                    <span>Page 1 of 9</span>
+                    <span>Page 1 of 10</span>
                 </div>
 
         </div>

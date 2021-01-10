@@ -27,7 +27,36 @@
         </div>
     </header>
     <div id="wrapper">
-        <div id="content">            <h4 class="date">2020-10-24</h4>
+        <div id="content">            <h4 class="date">2021-01-10</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="/sat-solver.html" rel="bookmark" title="Permanent Link to &quot;SAT solver&quot;">SAT solver</a>
+                </h2>
+
+                <p>SAT/SMT solver をブラックボックス的に扱っているため、内部実装を知りたい場面が出てきた。</p>
+<p>実際に自分で実装できないか調べてみた。以下の文献が参考になった。</p>
+<ul>
+<li>Conflict Driven Clause Learning<br />
+  <a href="https://cse442-17f.github.io/Conflict-Driven-Clause-Learning/">https://cse442-17f.github.io/Conflict-Driven-Clause-Learning/</a></li>
+<li>鍋島 英知, 高速SATソルバーの原理<br />
+  <a href="http://www-erato.ist.hokudai.ac.jp/docs/seminar/nabeshima.pdf">http://www-erato.ist.hokudai.ac.jp/docs/seminar/nabeshima.pdf</a></li>
+<li>新山 祐介, 充足可能性問題について<br />
+  <a href="https://euske.github.io/slides/sem20180612/index.html">https://euske.github.io/slides/sem20180612/index.html</a></li>
+</ul>
+<p>まずは DPLL アルゴリズムのソルバーを簡単に Python で書いてみた。</p>
+<ul>
+<li><a href="https://gist.github.com/buhii/cb99b67127cea0504289788227cb13cf">https://gist.github.com/buhii/cb99b67127cea0504289788227cb13cf</a></li>
+</ul>
+<p>CDCL アルゴリズムについては first UIP を導出するアルゴリズムがそこそこ難しそうで、まだ実装できていない。
+ただ DPLL よりも高速に動作するようだ。</p>
+                <div class="clear"></div>
+
+                <div class="info">
+
+                    <a href="/category/software.html" rel="tag" class="category">software</a>
+                </div>
+            </article>            <h4 class="date">2020-10-24</h4>
 
             <article class="post">
                 <h2 class="title">
@@ -78,23 +107,6 @@
 
                     <a href="/category/software.html" rel="tag" class="category">software</a>
                     &nbsp;
-                    &nbsp;<a href="/tag/max.html" class="tags">Max</a>
-                </div>
-            </article>            <h4 class="date">2015-11-07</h4>
-
-            <article class="post">
-                <h2 class="title">
-                    <a href="/juce.html" rel="bookmark" title="Permanent Link to &quot;JUCE&quot;">JUCE</a>
-                </h2>
-
-                <p>HN で <a href="https://news.ycombinator.com/item?id=10512248">Juce C++ framework reaches v4 with live-coding environment</a> という thread が上がっていた。JUCE はそういえば Max で使われているんだっけと思って調べてみると <a href="http://www.juce.com/case-studies/max">Building Max with JUCE</a> という記事があった。この記事によると、もともと Max/MSP は Mac OS 用のソフトウェアだったが、Windows 環境にポートするにあたって Mac2Win という Windows 上で Mac 環境をエミュレーションするソフトウェアを使ったらしい。ただライセンスが高額なのとエミュレーション環境が pre-Mac OS X だったのがきっかけで他の cross-platform framework を探していたところ JUCE を見つけたそうだ。会社ではこのような GUI アプリケーションを書くときは Qt が人気なのだけど、HN でも評判は良さそうだし、C++ の weirdness なところを隠蔽した良い設計という感想もあったので、必要になったときは思い出してみようと思う。</p>
-                <div class="clear"></div>
-
-                <div class="info">
-
-                    <a href="/category/software.html" rel="tag" class="category">software</a>
-                    &nbsp;
-                    &nbsp;<a href="/tag/juce.html" class="tags">JUCE</a>
                     &nbsp;<a href="/tag/max.html" class="tags">Max</a>
                 </div>
             </article>
